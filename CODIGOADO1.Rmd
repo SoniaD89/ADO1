@@ -68,7 +68,7 @@ El estudio escogido para el reanálisis es ["Expression data for C. elegans blun
 
   Los resultados de este informe coinciden con los del experimento objeto de estudio. Indican que provocar estrés en *C. elegans* vía traumatismo activa rutas de transcripción distintivas y dependientes de edad.
   
-  En caso de que se desee reproducir el análisis aquí realizado, el código R empleado se encuentra en el siguiente repositorio **[Github]**(https://github.com/SoniaD89/ADO1).
+  En caso de que se desee reproducir el análisis aquí realizado, el código R empleado se encuentra en el siguiente repositorio [**Github**](https://github.com/SoniaD89/ADO1).
 
 
 ```{r CreateFolders, warning=TRUE, include=FALSE}
@@ -225,7 +225,7 @@ dev.off()
 knitr::include_graphics("figures/BoxplotNorm.png")
 ```
   
-  En la figura \@ref(fig:PCANorm) se observa que la variabilidad debida al primer componente del análisis se ha reducido, pero aún se distingue la separación de los diferentes grupos de grupos de edad. En la figura \@ref(fig:BoxplotNorm) se reflejan las variabilidades de intensidades normalizadas, y se comprueba que la normalización se ha realizado correctamente al ser éstas muy similares para todas las muestras
+  En la figura \@ref(fig:PCANorm) se observa que la variabilidad debida al primer componente del análisis se ha reducido, pero aún se distingue la separación de los diferentes grupos de grupos de edad. En la figura \@ref(fig:BoxplotNorm) se reflejan las variabilidades de intensidades normalizadas, y se comprueba que la normalización se ha realizado correctamente al ser éstas muy similares para todas las muestras.
 
 
 Con esos datos normalizados, se realizó un test pvca (*Principal Variation Component Analysis*) para eliminar efectos debidos a la manipulación de los arrays en el laboratorio, y representar en un gráfico hasta qué punto cada una de las variables (edad y tratamiento) son responsables de la variabilidad de los arrays (Figura \@ref(fig:plotPVCA)). Se observa que un 71,9% de la variabilidad entre muestras puede atribuirse a la variable edad `age.ch1`, mientras que sólo un 0,9% se debe a la interacción entre edad y grupo.
@@ -658,14 +658,14 @@ Las figuras resultantes de los análisis han sido guardadas en archivos .png y .
 
 # Resultados
 
-Los genes seleccionados para cada comparación según la función `decideTests' son: 
+Los genes seleccionados para cada comparación según la función `decideTests` son: 
 
 ```{r results decidetest}
 print(summary(res))
 ```
 
 
-En las Figuraa \@ref(fig:volcano1) y \@ref(fig:volcano4) se observan resaltados los 4 genes principales para cada una de las comparaciones UvsP4 y UvsP1. Se puede ver lo reflejado en la tabla anterior: en la respuesta de los individuos de 4 días intervienen muchos más genes "_down-regulated_" que en la respuesta de los individuos de 1 día de edad. En esta última comparación ocurre al contrario, hay una mayor cantidad de genes "_up-regulated_". Además, los genes resaltados son distintos entre ambas comparaciones. 
+En las Figura \@ref(fig:volcano1) y \@ref(fig:volcano4) se observan resaltados los 4 genes principales para cada una de las comparaciones UvsP4 y UvsP1. Se puede ver lo reflejado en la tabla anterior: en la respuesta de los individuos de 4 días intervienen muchos más genes "_down-regulated_" que en la respuesta de los individuos de 1 día de edad. En esta última comparación ocurre al contrario, hay una mayor cantidad de genes "_up-regulated_". Además, los genes resaltados son distintos entre ambas comparaciones. 
 
 ```{r volcano1, echo=FALSE, fig.align="center", fig.show="asis", fig.asp=0.5, fig.cap="Volcanoplot para UvsP1. Resaltados aparecen los 4 primeros genes seleccionados", message=FALSE, fig.pos="H"}
 knitr::include_graphics("figures/volcanoplot1.png")
@@ -708,7 +708,7 @@ Los genes selecionados para este análisis en cada una de las comparaciones son:
 sapply(listOfSelected, length)
 ```
 
-Sólo se utilizarán los correspondientes a day1 (UvsP1), day4 (UvsP4) e INT (interacción entre ambos). Para ceñirme al objetivo del estudio, sólo se muestran aquí los resultados del análisis realizado con enrichGO para procesos biológicos (Figuras \@ref(fig:cnetplot) y \@ref(fig:emapplot) ):
+Sólo se utilizarán los correspondientes a day1 (UvsP1), day4 (UvsP4) e INT (interacción entre ambos). Para ceñirme al objetivo del estudio, sólo se muestran aquí los resultados del análisis realizado con enrichGO para procesos biológicos (Figuras \@ref(fig:cnetplot) y \@ref(fig:emapplot)). En la Figura \@ref(fig:cnetplot) aparecen cinco procesos biológicos enriquecidos, la respuesta inmune innata, la respuesta inmune, el proceso del sistema inmune, la respuesta de defensa y la respuesta a estímulos bióticos:
 
 ```{r cnetplot, fig.cap="Network obtenida mediante el análisis enrichGO en la lista obtenida de la comparación entre UvsP1 y UvsP4"}
 cnetplot(ego2, categorySize = "geneNum", schowCategory = 15, 
